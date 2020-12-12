@@ -3,9 +3,10 @@ from django.db import models
 # Create your models here.
 
 class Post(models.Model):
-    titulo = models.CharField(max_length=100)
+    titulo = models.CharField(max_length=200)
     conteudo = models.TextField()
     data_post = models.DateTimeField('Data da publicação')
+    objects = models.Manager()
     
 
     def __str__(self):

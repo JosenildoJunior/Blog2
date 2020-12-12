@@ -1,0 +1,16 @@
+{% extends "forum/base.html" %}
+
+{% block content %}
+    <div class="starter-template text-center py-5 px-3">
+        <h1>Escreva a sua história!</h1>
+
+        <form action="{% url 'forums:novo_post' %}" method='POST'>
+            {% csrf_token %}
+            {{forms.as_p}}
+            <button nome='submit'>Postar</button>
+
+        </form>
+    </div>
+
+{% endblock content %}
+
