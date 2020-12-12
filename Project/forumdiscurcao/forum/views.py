@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.shortcuts import redirect
+
 
 # Create your views here.
 
@@ -23,9 +25,10 @@ def novo_post(request):
         form = PostForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('forum:post'))
+            return HttpResponseRedirect(reverse('forums:post'))
     contexto = {'form': form}
     return render(request,'forum/novo_post.html', contexto)
+
 
 
     
