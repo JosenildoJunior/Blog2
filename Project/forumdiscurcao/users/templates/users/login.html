@@ -1,0 +1,29 @@
+{% extends "forum/base.html" %}
+
+{% block content %}
+
+<div class="starter-template text-center py-5 px-700">
+    <div class="card">
+        <div class="card-body">
+
+            {% if form.errors %}
+                <div class="alert alert-dark" role="alert">
+                Usuario ou senha incorretos! =(
+                    tente novamente!
+                </div>
+            {% endif %}
+
+            <form method="post" action="{% url 'users:login' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button name="submit" class = "btn btn-primary">entrar</button>
+                <input type="hidden" name="next" value="{% url 'forums:post' %}"
+            </form>
+            
+        
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
