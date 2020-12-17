@@ -17,7 +17,7 @@
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button name="submit" class = "btn btn-primary">entrar</button>
-                <input type="hidden" name="next" value="{% url 'forums:post' %}"
+                <input type="hidden" name="next" value="{% url 'forums:index' %}"/>
             </form>
             
         
