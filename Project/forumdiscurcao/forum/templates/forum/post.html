@@ -2,14 +2,17 @@
 {% extends "forum/base.html" %}
 {% block content %} 
 
+
+
     {%for post in posts%}
 
 <main class="container">   
     <div class="starter-template text-center py-5 px-3">
       <h2 class="blog-post-title">História N°: {{post.id}}</h2>
-      <p class="blog-post-meta">{{post.data_post}} por: <a href="#">{{user.username}}.</a></p>
-      <h1>{{post.titulo}}</h1>
+      <p class="blog-post-meta">{{post.data_post}} - Escrito por: <a href="#">{{post.autor}}.</a></p>
+      <h1>{{post.titulo}} <a href="{% url 'forums:edit_post' post.id %}"><button nome='submit' class="btn btn-dark">Editar</button></a></h1>
       <p class="lead">{{post.conteudo}}</p>
+      
     </div> 
   </main><!-- /.container -->
     {% empty %}

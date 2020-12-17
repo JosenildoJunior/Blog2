@@ -5,7 +5,7 @@
     <h1>Escreva sua história!</h1>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <button nome='submit'>Postar</button>
+        <button nome='submit' class="btn btn-dark">Postar</button>
     </form>
 </div>
 {% endblock %}

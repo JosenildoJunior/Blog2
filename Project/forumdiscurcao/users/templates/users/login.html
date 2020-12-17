@@ -16,7 +16,7 @@
             <form method="post" action="{% url 'users:login' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button name="submit" class = "btn btn-primary">entrar</button>
+                <button name="submit" class = "btn btn-dark">Entrar</button>
                 <input type="hidden" name="next" value="{% url 'forums:index' %}"/>
             </form>
             
